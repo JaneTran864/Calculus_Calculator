@@ -8,7 +8,7 @@ class Calculator(QWidget):
         self.setWindowTitle('Calculus Calculator')
         self.setFixedSize(400, 400)
         self.init_ui()
-
+    
     def init_ui(self):
         label_func = QLabel('Function f(x):')
         self.edit_func = QLineEdit()
@@ -53,7 +53,8 @@ class Calculator(QWidget):
         vbox.addWidget(label_result)
         vbox.addWidget(self.result)
         self.setLayout(vbox)
-
+    
+    #Create limit func
     def calculate_limit(self):
         f = sp.sympify(self.edit_func.text())
         x = sp.Symbol(self.edit_x.text())
